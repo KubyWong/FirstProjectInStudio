@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
             "aaa4",
             "aaa5",
             "aaa6",
+            "aaa7",
     };
 
     private ActivityControler controler;
