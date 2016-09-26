@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".HardwareActivity" />
         <activity android:name=".ViewFlipperActivity" />
-        <activity android:name=".TouchActivity"></activity>
+        <activity android:name=".TouchActivity" />
+        <activity android:name=".RxjavaActivity"></activity>
     </application>
 
 </manifest>
