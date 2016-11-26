@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             "ViewFlipper",
             "TouchActivity",
             "RxJavaActivity",
-            "aaa5",
+            "WheelViewActivity",
             "aaa6",
             "aaa7",
     };
@@ -58,7 +58,8 @@ public class MainActivity extends AppCompatActivity {
                     case  "RxJavaActivity":
                         controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,RxjavaActivity.class),R.anim.r2l_in,R.anim.r2l_out);
                         break;
-                    case  "ActivityAnimation3":
+                    case  "WheelViewActivity":
+                        controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,WheelViewActivity.class),R.anim.r2l_in,R.anim.r2l_out);
                         break;
                 }
             }

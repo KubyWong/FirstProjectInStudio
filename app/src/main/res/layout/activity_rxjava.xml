@@ -41,4 +41,16 @@
         android:id="@+id/btn_sync2"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_map1"
+        android:text="exampleMap1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Example_flatMap"
+        android:id="@+id/btn_flatmap" />
 </LinearLayout>
