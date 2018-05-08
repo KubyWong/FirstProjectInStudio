@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kuby.firstproject">
 
+    <uses-permission android:name="android.permission.BIND_JOB_SERVICE" />
+
     <application
         android:name=".MyApplicationContext"
         android:allowBackup="true"
@@ -9,7 +11,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +24,24 @@
         <activity android:name=".ViewFlipperActivity" />
         <activity android:name=".TouchActivity" />
         <activity android:name=".RxjavaActivity" />
-        <activity android:name=".WheelViewActivity"></activity>
+        <activity android:name=".WheelViewActivity" />
+        <activity android:name=".MPChartActivity" />
+        <activity android:name=".KeepLiveServiceActivity" />
+
+        <service
+            android:name=".services.MessageService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.GuardService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote" />
+        <service
+            android:name=".services.JobWakeUpService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

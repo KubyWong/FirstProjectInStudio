@@ -15,7 +15,7 @@ import com.example.kuby.firstproject.impl.ActivityControler;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
     @ViewInject(value = R.id.lv_main)
     private ListView lvMain;
@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
             "TouchActivity",
             "RxJavaActivity",
             "WheelViewActivity",
-            "aaa6",
-            "aaa7",
+            "MPAndroidChart",
+            "KeepLiveService",
     };
 
     private ActivityControler controler;
@@ -40,29 +40,35 @@ public class MainActivity extends AppCompatActivity {
         controler = new ActivityControler();
         ArrayAdapter adapter = new ArrayAdapter(this, R.layout.item_main_list, R.id.tv_title, arrStr);
         lvMain.setAdapter(adapter);
-        lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView textView = (TextView) view.findViewById(R.id.tv_title);
-                String title = textView.getText().toString();
-                switch (title){
-                    case  "HardwareActivity":
-                        controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,HardwareActivity.class),R.anim.r2l_in,R.anim.r2l_out);
-                        break;
-                    case  "ViewFlipper":
-                        controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,ViewFlipperActivity.class),R.anim.r2l_in,R.anim.r2l_out);
-                        break;
-                    case  "TouchActivity":
-                        controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,TouchActivity.class),R.anim.r2l_in,R.anim.r2l_out);
-                        break;
-                    case  "RxJavaActivity":
-                        controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,RxjavaActivity.class),R.anim.r2l_in,R.anim.r2l_out);
-                        break;
-                    case  "WheelViewActivity":
-                        controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,WheelViewActivity.class),R.anim.r2l_in,R.anim.r2l_out);
-                        break;
-                }
-            }
-        });
+        lvMain.setOnItemClickListener(this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        TextView textView = (TextView) view.findViewById(R.id.tv_title);
+        String title = textView.getText().toString();
+        switch (title){
+            case  "HardwareActivity":
+                controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,HardwareActivity.class),R.anim.r2l_in,R.anim.r2l_out);
+                break;
+            case  "ViewFlipper":
+                controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,ViewFlipperActivity.class),R.anim.r2l_in,R.anim.r2l_out);
+                break;
+            case  "TouchActivity":
+                controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,TouchActivity.class),R.anim.r2l_in,R.anim.r2l_out);
+                break;
+            case  "RxJavaActivity":
+                controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,RxjavaActivity.class),R.anim.r2l_in,R.anim.r2l_out);
+                break;
+            case  "WheelViewActivity":
+                controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,WheelViewActivity.class),R.anim.r2l_in,R.anim.r2l_out);
+                break;
+            case  "MPAndroidChart":
+                controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,MPChartActivity.class),R.anim.r2l_in,R.anim.r2l_out);
+                break;
+            case  "KeepLiveService":
+                controler.onActivityJump(MainActivity.this,new Intent(MainActivity.this,KeepLiveServiceActivity.class),R.anim.r2l_in,R.anim.r2l_out);
+                break;
+        }
     }
 }
