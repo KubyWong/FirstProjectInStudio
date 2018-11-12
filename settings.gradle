@@ -1,1 +1,1 @@
-include ':app', ':testmvp'
+include ':app', ':testmvp', ':waitingagreement'
